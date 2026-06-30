@@ -1,8 +1,8 @@
 import json
 import os
 import requests 
-coleccion = []
 
+coleccion = []
 
 def agregar_juego():
     titulo = input("Ingrese título del juego: ")
@@ -96,4 +96,45 @@ def recomendacion():
             print("No fue posible obtener una recomendación.")
     except:
         print("No se pudo conectar con la API.")
-        
+
+def main():
+    cargar_datos()
+
+    while True:
+
+        print("\n====== COLECCIONISTA DE JUEGOS ======")
+        print("1. Agregar juego")
+        print("2. Listar colección")
+        print("3. Ver estadísticas")
+        print("4. Cambiar estado")
+        print("5. Recomendación del día")
+        print("6. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            agregar_juego()
+
+        elif opcion == "2":
+            listar_juegos()
+
+        elif opcion == "3":
+            estadisticas()
+
+        elif opcion == "4":
+            cambiar_estado()
+
+        elif opcion == "5":
+            recomendacion()
+
+        elif opcion == "6":
+
+            guardar_datos()
+
+            print("Programa finalizado.")
+            break
+
+        else:
+
+            print("Opción inválida.")
+main()
