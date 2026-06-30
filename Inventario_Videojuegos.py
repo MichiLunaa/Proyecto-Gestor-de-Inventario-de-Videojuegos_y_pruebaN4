@@ -70,7 +70,6 @@ def cambiar_estado():
         print("Juego no encontrado.")
 
 def guardar_datos():
-
     with open("coleccion.json", "w") as archivo:
         json.dump(coleccion, archivo, indent=4)
 
@@ -78,7 +77,6 @@ def guardar_datos():
 
 def cargar_datos():
     global coleccion
-    
     if os.path.exists("coleccion.json"):
         with open("coleccion.json", "r") as archivo:
             coleccion = json.load(archivo)
@@ -101,7 +99,6 @@ def main():
     cargar_datos()
 
     while True:
-
         print("\n====== COLECCIONISTA DE JUEGOS ======")
         print("1. Agregar juego")
         print("2. Listar colección")
@@ -128,9 +125,7 @@ def main():
             recomendacion()
 
         elif opcion == "6":
-
             guardar_datos()
-
             print("Programa finalizado.")
             break
 
